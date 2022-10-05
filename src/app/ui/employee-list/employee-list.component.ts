@@ -15,9 +15,13 @@ import {HttpClient} from "@angular/common/http";
 })
 export class EmployeeListComponent {
 
+  data = [{ name: "Wojtek" }, { name: "Jacek" }]
+
   constructor(private _client: HttpClient) {
   }
-title: string= "nowy tytuł"
+title: string= "nowy_tytul";
+  ending: string= "zakonczenie";
+
   data$: Observable<EmployeeModel[] | null> = this._client.get<EmployeeModel[]>('assets/data/employees.json');
 }
 
