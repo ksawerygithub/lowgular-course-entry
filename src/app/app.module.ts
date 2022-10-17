@@ -10,6 +10,7 @@ import {EmployeeServiceModule} from "./services/employee.service-module";
 import {ProjectComponentModule} from "./ui/project/project.component-module";
 import {ProjectService} from "./services/project.service";
 import {ProjectServiceModule} from "./services/project.service-module";
+import {EmployeeFormComponentModule} from "./ui/employee-form/employee-form.component-module";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {ProjectServiceModule} from "./services/project.service-module";
     EmployeeServiceModule,
     ProjectServiceModule,
     ProjectComponentModule,
+    EmployeeFormComponentModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
