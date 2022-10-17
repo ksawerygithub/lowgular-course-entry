@@ -11,6 +11,7 @@ import {ProjectComponentModule} from "./ui/project/project.component-module";
 import {ProjectService} from "./services/project.service";
 import {ProjectServiceModule} from "./services/project.service-module";
 import {EmployeeFormComponentModule} from "./ui/employee-form/employee-form.component-module";
+import {ListComponentModule} from "./ui/list/list.component-module";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {EmployeeFormComponentModule} from "./ui/employee-form/employee-form.comp
     ProjectServiceModule,
     ProjectComponentModule,
     EmployeeFormComponentModule,
+    ListComponentModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
