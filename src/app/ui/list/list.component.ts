@@ -13,7 +13,7 @@ export class ListComponent {
     age: new FormControl(null, [Validators.required]),
     salary: new FormControl(null, [Validators.required])
   });
-
-  onListSubmitted(list: FormGroup): void {
-  }
+  onButtonClicked(list: {name: string, email: string, age: number, salary: number }){
+  alert(`User was successfully added to the database!
+  Name:${list.name} Age:${list.age} Salary:${list.salary}`) }
 }
