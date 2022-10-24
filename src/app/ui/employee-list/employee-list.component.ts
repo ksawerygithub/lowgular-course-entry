@@ -1,13 +1,8 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ViewEncapsulation,
-} from '@angular/core';
-import { Observable} from 'rxjs';
-import { EmployeeModel } from '../../model/employee.model';
-import {EmployeeService} from "../../services/employee.service";
-import {PersonModel} from "../../model/person.model";
-
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { PersonModel } from '../../model/person.model';
+import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'employee-list',
@@ -17,15 +12,23 @@ import {PersonModel} from "../../model/person.model";
 })
 export class EmployeeListComponent {
 
-  data$: Observable<PersonModel[]> = this._EmployeeService.getAll();
+
 
 
   data = [{ name: "Wojtek" }, { name: "Jacek" }]
 
-  constructor (private _EmployeeService: EmployeeService ) {
+  constructor(private _EmployeeService: EmployeeService, private _activatedRoute: ActivatedRoute) {
   }
-title: string= "nowy_tytul";
-  ending: string= "zakonczenie";
+  title: string = "nowy_tytul";
+  ending: string = "zakonczenie";
+  data$: Observable<PersonModel[]> = this._EmployeeService.getAll();
+  remove(id: string) {
+this._EmployeeService.delete(id).subscribe()};
+
+  OnButtonClicked()
+{alert('User was successfully removed')}
+
+
 
 
 }

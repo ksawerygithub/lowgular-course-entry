@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from "rxjs";
-import {EmployeeModel} from "../model/employee.model";
-import {PersonModel} from "../model/person.model";
-import {CreateEmployeeModel} from "../model/create-employee.model";
+import {map, Observable} from 'rxjs';
+import { PersonModel } from '../model/person.model';
 
 @Injectable()
 export class EmployeeService {
@@ -14,5 +12,8 @@ export class EmployeeService {
     return this._httpClient.get<PersonModel[]>('assets/data/people.json')
   }
 
-
+  delete(id: string): Observable<void> {
+    return this._httpClient.delete
+    (`https://dummy.restapiexample.com/api/v1/delete/`+ id).pipe(map(()=>void 0));
+  }
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { EmployeeService } from './employee.service';
 
 @NgModule({
-  imports: [],
+  imports:[],
   declarations: [],
   providers: [EmployeeService],
   exports: []
