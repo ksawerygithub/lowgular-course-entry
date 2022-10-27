@@ -12,16 +12,13 @@ import { EmployeeService } from '../../services/employee.service';
 })
 export class EmployeeListComponent {
 
+  data$: Observable<PersonModel[]> = this._EmployeeService.getAll();
 
-
-
-  data = [{ name: "Wojtek" }, { name: "Jacek" }]
-
-  constructor(private _EmployeeService: EmployeeService, private _activatedRoute: ActivatedRoute) {
+  constructor(private _EmployeeService: EmployeeService) {
   }
   title: string = "nowy_tytul";
   ending: string = "zakonczenie";
-  data$: Observable<PersonModel[]> = this._EmployeeService.getAll();
+
   remove(id: string) {
 this._EmployeeService.delete(id).subscribe()};
 
