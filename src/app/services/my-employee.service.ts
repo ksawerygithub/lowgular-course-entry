@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {map, Observable} from "rxjs";
-import {MyEmployeeModel} from "../model/my-employee.model";
-import {MyEmployeeResponse} from "./my-employee.response";
-import {ApiResponse} from "./api.response";
-import {mapOneOrManyArgs} from "rxjs/internal/util/mapOneOrManyArgs";
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { MyEmployeeModel } from '../model/my-employee.model';
+import { ApiResponse } from './api.response';
+import { MyEmployeeResponse } from './my-employee.response';
 
 @Injectable()
 export class MyEmployeeService {
@@ -12,9 +12,12 @@ export class MyEmployeeService {
   }
 
 
+
+
+
   getAll(): Observable<MyEmployeeModel[]> {
     return this._httpClient.get<ApiResponse<MyEmployeeResponse[]>>('https://dummy.restapiexample.com/api/v1/employees').pipe(
-      map((response:ApiResponse<MyEmployeeResponse[]>) => {
+      map((response: ApiResponse<MyEmployeeResponse[]>) => {
         return response.data.map((MyEmployeeResponse: MyEmployeeResponse) => {
           return {
             number: MyEmployeeResponse.id,
@@ -26,5 +29,10 @@ export class MyEmployeeService {
         });
       })
     )
+  }
+
+  delete(number: string): Observable<void> {
+    return this._httpClient.delete
+    ('https://dummy.restapiexample.com/api/v1/delete/' + number).pipe(map(() => void 0));
   }
 }

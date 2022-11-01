@@ -2,7 +2,7 @@
 
 <ul *ngIf="data$ | async as data; else empty">
   <li *ngFor="let employee of data">{{ employee.number }}: {{ employee.name }}.
-    {{employee.age}}. {{employee.salary}}
+    {{employee.age}}. {{employee.salary}} <button (click) = "remove(employee.number)">Remove me</button>
 
 
 
