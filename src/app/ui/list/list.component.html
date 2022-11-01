@@ -1,7 +1,0 @@
-<form [formGroup]="list" (ngSubmit)="onFormSubmitted(list.value)">
-  <input type="text" formControlName="name" placeholder="Name">
-  <input type="number" formControlName="age" placeholder="Age">
-  <input type="number" formControlName="salary" placeholder="Salary">
-  <input type="submit" [disabled]="list.invalid" value="Submit"></form>
-
-Your new employee {{list.value.name}}, age: {{list.value.age}} with salary {{list.value.salary}}$ will be added in the system
