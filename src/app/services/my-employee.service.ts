@@ -5,12 +5,12 @@ import { map } from 'rxjs/operators';
 import { MyEmployeeModel } from '../model/my-employee.model';
 import { ApiResponse } from './api.response';
 import { MyEmployeeResponse } from './my-employee.response';
+import {CreateMyEmployeeModel} from "../model/create-my-employee.model";
 
 @Injectable()
 export class MyEmployeeService {
   constructor(private _httpClient: HttpClient) {
   }
-
 
 
 
@@ -29,10 +29,17 @@ export class MyEmployeeService {
         });
       })
     )
+
   }
 
   delete(number: string): Observable<void> {
     return this._httpClient.delete
-    ('https://dummy.restapiexample.com/api/v1/delete/' + number).pipe(map(() => void 0));
+      ('https://dummy.restapiexample.com/api/v1/delete/' + number).pipe(map(() => void 0));
+  }
+
+  create(form: CreateMyEmployeeModel): Observable<void> {
+    return this._httpClient.post<CreateMyEmployeeModel>('https://dummy.restapiexample.com/api/v1/create', form)
+      .pipe(map(() => void 0));
+
   }
 }

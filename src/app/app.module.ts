@@ -7,18 +7,20 @@ import {MyEmployeeComponentModule} from "./ui/my-employee/my-employee.component-
 import {MyEmployeeService} from "./services/my-employee.service";
 import {MyEmployeeServiceModule} from "./services/my-employee.service-module";
 import {MyEmployeeComponent} from "./ui/my-employee/my-employee.component";
+import {MyEmployeeFormComponentModule} from "./ui/my-employee-form/my-employee-form.component-module";
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MyEmployeeServiceModule,
-    MyEmployeeComponentModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MyEmployeeServiceModule,
+        MyEmployeeComponentModule,
+        MyEmployeeFormComponentModule,
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })
